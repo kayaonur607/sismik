@@ -1,0 +1,42 @@
+{
+  "name": "sismik-functions",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test test/*.test.cjs",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run serve",
+    "deploy": "firebase deploy --only functions"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@apple/app-store-server-library": "^3.1.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "axios": "^1.6.8",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^6.0.1",
+    "twitter-api-v2": "^1.29.1"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.8.1",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "firebase-functions-test": "^3.1.0",
+    "firebase-tools": "^15.23.0",
+    "typescript": "^5.4.5"
+  },
+  "overrides": {
+    "uuid": "^11.1.1",
+    "ts-deepmerge": "^8.0.0",
+    "@opentelemetry/core": "^2.8.0"
+  },
+  "private": true
+}

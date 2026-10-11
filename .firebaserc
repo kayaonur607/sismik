@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "sismik-app-ea600"
+  },
+  "targets": {
+    "sismik-app-ea600": {
+      "hosting": {
+        "main": [
+          "sismik-app"
+        ],
+        "api": [
+          "sismik-app-ea600"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,109 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firestore-debug.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "hosting": [
+    {
+      "target": "main",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/quake/**",
+          "destination": "/quake.html"
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/en{,/**}",
+          "destination": "/?lang=en",
+          "type": 301
+        }
+      ],
+      "headers": [
+        {
+          "source": "/.well-known/apple-app-site-association",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=3600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "api",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/api",
+          "function": {
+            "functionId": "sismikApi",
+            "region": "us-central1"
+          }
+        },
+        {
+          "source": "/api/**",
+          "function": {
+            "functionId": "sismikApi",
+            "region": "us-central1"
+          }
+        },
+        {
+          "source": "/quake/**",
+          "destination": "/quake.html"
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/en{,/**}",
+          "destination": "/?lang=en",
+          "type": 301
+        }
+      ],
+      "headers": [
+        {
+          "source": "/.well-known/apple-app-site-association",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=3600"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

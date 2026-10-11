@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-title-tr="Gizlilik Politikası — Sismik" data-title-en="Privacy Policy — Sismik">Gizlilik Politikası — Sismik</title>
+<meta name="description" content="Sismik'in hangi verileri işlediği, nerede sakladığı ve haklarınız.">
+<meta name="theme-color" content="#F4F5F8">
+<link rel="icon" href="/assets/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="/site.css">
+<script src="/lang.js" defer></script>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"><img src="/assets/icon.png" alt="" width="30" height="30"></span><b>Sismik</b></a>
+    <nav class="topnav" aria-label="Site">
+      <a href="/#features"><span data-lang="tr">Özellikler</span><span data-lang="en">Features</span></a><a href="/data/" class="nav-keep"><span data-lang="tr">Veri Kaynakları</span><span data-lang="en">Data sources</span></a><a href="/privacy/"><span data-lang="tr">Gizlilik</span><span data-lang="en">Privacy</span></a>
+      <span class="langswitch" role="group" aria-label="Dil / Language">
+        <button type="button" data-set="tr" aria-pressed="false">TR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </span>
+    </nav>
+  </div>
+</div>
+<main class="doc"><div class="wrap prose"><h1><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></h1>
+<div data-lang="tr"><p class="issued">Yürürlük tarihi: 24 Eylül 2026 · Onur Kaya · <a href="mailto:sismikapplication@gmail.com">sismikapplication@gmail.com</a></p>
+<p>Sismik, <strong>veri minimizasyonu ve kullanıcı kontrolü</strong> ilkeleriyle tasarlanmış bir deprem ve acil durum uygulamasıdır. Hesap sistemi yoktur; Acil Sağlık &amp; Kimlik Kartlarınız ve hazırlık bilgileriniz yalnızca cihazınızda kalır.</p>
+
+<h2>1. Özet</h2>
+<ul>
+  <li>Hesap veya parola <strong>yoktur</strong>.</li>
+  <li>Reklam, davranışsal takip veya üçüncü taraf reklam izleyicisi <strong>yoktur</strong>.</li>
+  <li>Acil Sağlık &amp; Kimlik Kartlarınız (kan grubu, kronik hastalık, ilaç, evcil hayvan bilgisi) yalnızca cihazınızda saklanır, sunucuya hiçbir zaman gönderilmez.</li>
+  <li>Yalnızca push bildirimlerini açarsanız: cihaz bildirim token'ı, bildirim tercihleriniz ve (yakınlık bildirimi seçtiyseniz) yaklaşık konumunuz saklanır.</li>
+  <li>Push kaydı 60 gün hareketsizlik sonrası otomatik silinir; bildirimleri kapattığınızda anında silinir.</li>
+  <li>Premium alırsanız abonelik durumunuz Apple üzerinden doğrulanır ve analiz için anonim olarak RevenueCat'e bildirilir.</li>
+</ul>
+
+<h2>2. İşlenen veriler</h2>
+
+<h3>2.1 Push bildirimi kaydı — yalnızca bildirimleri açarsanız</h3>
+<table>
+  <thead><tr><th>Veri</th><th>Amaç</th><th>Saklama</th></tr></thead>
+  <tbody>
+  <tr><td>APNs / FCM cihaz token'ı<small>Anonim, Apple veya Google tarafından üretilir</small></td><td>Bildirimi cihazınıza iletmek</td><td>60 gün hareketsizlikte silinir; bildirim kapatılınca anında</td></tr>
+  <tr><td>Bildirim tercihleri<small>Kaynak, büyüklük eşiği, yakınlık yarıçapı, hissedilme şiddeti, sessiz saatler, dil, saat dilimi</small></td><td>Bildirimleri sunucuda filtrelemek</td><td>Token ile birlikte</td></tr>
+  <tr><td>Yaklaşık konum<small>Yalnızca kayıtlı yer ya da yakınlık bildirimi varsa. "Konumum değişince güncelle" açıksa, uygulama kapalıyken yalnızca belirgin bir yer değişikliğinde ve kabaca güncellenir</small></td><td>Yalnızca seçtiğiniz yarıçaptaki deprem ve tsunami uyarılarını bildirmek</td><td>Token ile birlikte; yalnızca son değer tutulur, konum geçmişi saklanmaz</td></tr>
+  <tr><td>Artçı takibi kaydı<small>Yalnızca bir depremi takibe alırsanız</small></td><td>Kilit Ekranı ve Dynamic Island'daki Canlı Etkinliği güncellemek</td><td>Takip süresi bitince silinir</td></tr>
+  </tbody>
+</table>
+<p>Bu veriler Google Firebase altyapısında (Cloud Functions ve Firestore) saklanır, cihaz token'ı dışında bir kimlikleyiciyle <strong>ilişkilendirilmez</strong> ve deprem veri sağlayıcıları dahil hiçbir üçüncü tarafla reklam amacıyla paylaşılmaz. Hukuki dayanak açık rızanızdır; rızanızı bildirimleri kapatarak istediğiniz an geri alabilirsiniz.</p>
+<p>Artçı takibi kaydı yalnızca <em>depremin kendi bilgilerini</em> taşır (kimlik, büyüklük, merkez üssü koordinatı, takip yarıçapı). Sizinle ilgili hiçbir veri içermez.</p>
+
+<h3>2.2 Toplanma alanı araması — yalnızca kullanırsanız</h3>
+<p>Yakınınızdaki güvenli toplanma noktalarını bulmak için haritadaki yaklaşık konumunuz Google Places API ve/veya OpenStreetMap servislerine bir arama sorgusu olarak gönderilir. Bu sorgu hiçbir hesap, cihaz kimliği veya kişisel bilgiyle ilişkilendirilmez; sonuçlar performans için cihazınızda önbelleğe alınır. Kaydettiğiniz noktalar yalnızca cihazınızda kalır.</p>
+
+<h3>2.3 Cihaz üzerinde işlenen veriler — sunucuya hiç gitmez</h3>
+<ul>
+  <li><strong>Konum:</strong> Depremlere uzaklık, en yakın toplanma alanları ve tahmini etki hesapları tamamen cihazınızda yapılır. Konum izni isteğe bağlıdır.</li>
+  <li><strong>Ayarlar ve hazırlık listesi:</strong> Yalnızca cihazınızda saklanır.</li>
+  <li><strong>Acil Sağlık &amp; Kimlik Kartları:</strong> Ad, kan grubu, kronik hastalıklar, ilaçlar, alerjiler, acil durum yakını telefonu, afet çantası konumu ve evcil hayvan bilgileri yalnızca cihazınızda saklanır.</li>
+  <li><strong>Deprem verisi önbelleği:</strong> Çevrimdışı görüntüleme için cihazınızda tutulur.</li>
+</ul>
+
+<h3>2.4 Sismolog AI</h3>
+<p>Analizi başlattığınızda yalnızca depremin veya istatistiğin <strong>teknik parametreleri</strong> (büyüklük, derinlik, bölge adı, tarih aralığı gibi toplu sayılar) işlenir. Kişisel veri, konum veya cihaz bilgisi <strong>hiçbir zaman gönderilmez</strong>. Üretilen analiz, ilişkili olduğu sorguyla birlikte kısa süreli önbelleğe alınır ve sizi tanımlayacak hiçbir bilgi içermez.</p>
+
+<h2>3. Üçüncü taraf hizmetler</h2>
+<p>Hangi deprem, fay ve harita verisinin nereden geldiğinin ayrıntısı için <a href="/data/">Veri Kaynakları</a> sayfasına bakabilirsiniz.</p>
+<table>
+  <thead><tr><th>Hizmet</th><th>Rolü</th><th>Kişisel veri</th></tr></thead>
+  <tbody>
+  <tr><td>Google Firebase</td><td>API, push altyapısı ve veritabanı</td><td>Standart sunucu erişim kayıtları; push kaydı verileri (Bölüm 2.1)</td></tr>
+  <tr><td>Apple<small>APNs, Haritalar, App Store</small></td><td>Bildirim iletimi, harita, abonelik</td><td>Apple'ın kendi gizlilik politikasına tabidir; ödeme bilgilerinizi göremeyiz</td></tr>
+  <tr><td>AFAD, Kandilli, EMSC, USGS, NOA, JMA, CENC (Wolfx), BMKG, GeoNet, NOAA, GDACS</td><td>Deprem, tsunami ve etki verisi kaynakları</td><td>Hiçbir kullanıcı verisi iletilmez</td></tr>
+  <tr><td>Google Gemini</td><td>Sismolog AI</td><td>Yalnızca deprem parametreleri; kişisel veri gönderilmez</td></tr>
+  <tr><td>Google Places / OpenStreetMap</td><td>Toplanma alanı araması</td><td>Arama sırasında yaklaşık konum; kimlikle ilişkilendirilmez</td></tr>
+  <tr><td>RevenueCat</td><td>Abonelik doğrulama ve analiz</td><td>Anonim cihaz kimliği ve satın alma verisi; ad, e-posta veya ödeme bilgisi paylaşılmaz</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Abonelikler</h2>
+<p>Sismik Premium abonelikleri tamamen Apple App Store üzerinden yürütülür. Ödeme, fatura ve kart bilgilerinize erişimimiz <strong>yoktur</strong>. Abonelik durumunuz cihazınızda StoreKit ile doğrulanır ve sunucularımıza iletilir; ayrıca analiz için anonim olarak RevenueCat'e bildirilir. Ayrıntı için <a href="/terms/">Kullanım Koşulları</a> ve <a href="/eula/">Lisans Sözleşmesi</a>.</p>
+
+<h2>5. Veri güvenliği</h2>
+<ul>
+  <li>Tüm ağ trafiği TLS (HTTPS) ile şifrelenir.</li>
+  <li>Veri minimizasyonu: yalnızca hizmet için zorunlu asgari veri işlenir.</li>
+  <li>Veritabanına doğrudan istemci erişimi kapalıdır; tüm işlemler sunucu tarafında denetlenir.</li>
+  <li>Uygulamanın kullandığı API ucu, bu tanıtım sitesinden ayrı bir adreste yayımlanır.</li>
+</ul>
+
+<h2>6. Haklarınız (KVKK ve GDPR)</h2>
+<p>6698 sayılı KVKK'nın 11. maddesi ve GDPR kapsamında verilerinize erişme, düzeltme, silme, işlemeye itiraz etme ve veri taşınabilirliği haklarına sahipsiniz. Push kaydınızı silmek için uygulamada bildirimleri kapatmanız yeterlidir. Acil Sağlık &amp; Kimlik Kartlarınızı uygulama içinden dilediğiniz an silebilirsiniz. Diğer talepler <a href="mailto:sismikapplication@gmail.com">sismikapplication@gmail.com</a> adresine iletilebilir ve 30 gün içinde yanıtlanır.</p>
+
+<h2>7. Çocukların gizliliği</h2>
+<p>Sismik genel kitleye yöneliktir ve 13 yaş altı çocuklardan bilerek veri toplamaz. Hesap sistemi bulunmadığından yaş bilgisi dahil hiçbir kimlik verisi istenmez.</p>
+
+<h2>8. Değişiklikler</h2>
+<p>Bu politika güncellendiğinde bu sayfada yayımlanır ve yürürlük tarihi güncellenir. Önemli değişiklikler uygulama içinde duyurulur.</p>
+</div>
+<div data-lang="en"><p class="issued">Effective: 24 September 2026 · Onur Kaya · <a href="mailto:sismikapplication@gmail.com">sismikapplication@gmail.com</a></p>
+<p>Sismik is an earthquake and emergency app designed around <strong>data minimization and user control</strong>. There is no account system; your Emergency Health &amp; ID Cards and preparedness details stay on your device.</p>
+
+<h2>1. Summary</h2>
+<ul>
+  <li>No accounts or passwords.</li>
+  <li>No ads, behavioural tracking, or third-party ad trackers.</li>
+  <li>Your Emergency Health &amp; ID Cards (blood type, chronic conditions, medications, pet details) stay on your device only — never sent to a server.</li>
+  <li>Only if you enable push notifications: your device token, notification preferences, and — if proximity alerts are on — your approximate location are stored.</li>
+  <li>Push registration expires after 60 days of inactivity and is deleted immediately when you turn notifications off.</li>
+  <li>If you buy Premium, your subscription status is verified through Apple and shared anonymously with RevenueCat for analytics.</li>
+</ul>
+
+<h2>2. Data we process</h2>
+
+<h3>2.1 Push registration — only if you enable notifications</h3>
+<table>
+  <thead><tr><th>Data</th><th>Purpose</th><th>Retention</th></tr></thead>
+  <tbody>
+  <tr><td>APNs / FCM device token<small>Anonymous, generated by Apple or Google</small></td><td>Delivering notifications to your device</td><td>Deleted after 60 days of inactivity; immediately when notifications are off</td></tr>
+  <tr><td>Notification preferences<small>Source, magnitude threshold, proximity radius, felt intensity, quiet hours, language, timezone</small></td><td>Filtering notifications on the server</td><td>With the token</td></tr>
+  <tr><td>Approximate location<small>Only if you save a place or use proximity alerts. With "Update when I move" on, it is refreshed approximately, and only after a significant move, even when the app is closed</small></td><td>Notifying you only about earthquakes and tsunami warnings within your radius</td><td>With the token; only the latest value is kept, no location history</td></tr>
+  <tr><td>Aftershock watch<small>Only if you track an earthquake</small></td><td>Updating the Live Activity on the Lock Screen and Dynamic Island</td><td>Deleted when the watch expires</td></tr>
+  </tbody>
+</table>
+<p>This data is stored on Google Firebase (Cloud Functions and Firestore), is <strong>never linked</strong> to any identifier other than the device token, and is never shared with third parties — including earthquake data providers — for advertising. The legal basis is your consent, which you can withdraw at any time by turning notifications off.</p>
+<p>An aftershock watch carries only <em>the earthquake's own details</em> (id, magnitude, epicentre coordinates, watch radius). It contains nothing about you.</p>
+
+<h3>2.2 Assembly point search — only if you use it</h3>
+<p>To find nearby safe assembly points, your approximate map location is sent as a search query to the Google Places API and/or OpenStreetMap. The query is never linked to an account, device ID, or personal information; results are cached on your device. Saved points stay on your device only.</p>
+
+<h3>2.3 On-device only — never sent to a server</h3>
+<ul>
+  <li><strong>Location:</strong> distance to earthquakes, nearest assembly areas and estimated impact are calculated entirely on your device. Location access is optional.</li>
+  <li><strong>Settings and preparedness checklist:</strong> stored on your device only.</li>
+  <li><strong>Emergency Health &amp; ID Cards:</strong> name, blood type, chronic conditions, medications, allergies, emergency contact, go-bag location and pet information stay on your device.</li>
+  <li><strong>Earthquake cache:</strong> kept on your device for offline viewing.</li>
+</ul>
+
+<h3>2.4 Sismolog AI</h3>
+<p>When you run an analysis, only <strong>technical parameters</strong> (magnitude, depth, region name, or aggregate figures such as counts and date ranges) are processed. Personal data, location and device information are <strong>never sent</strong>. Results are cached briefly alongside the query they belong to and contain nothing that identifies you.</p>
+
+<h2>3. Third parties</h2>
+<p>See <a href="/data/">Data Sources</a> for where each earthquake, fault and map layer comes from.</p>
+<table>
+  <thead><tr><th>Service</th><th>Role</th><th>Personal data</th></tr></thead>
+  <tbody>
+  <tr><td>Google Firebase</td><td>API, push infrastructure and database</td><td>Standard server access logs; push registration data (Section 2.1)</td></tr>
+  <tr><td>Apple<small>APNs, Maps, App Store</small></td><td>Notification delivery, maps, subscriptions</td><td>Governed by Apple's own privacy policy; we cannot see your payment details</td></tr>
+  <tr><td>AFAD, Kandilli, EMSC, USGS, NOA, JMA, CENC (Wolfx), BMKG, GeoNet, NOAA, GDACS</td><td>Earthquake, tsunami and impact data sources</td><td>No user data is ever sent to them</td></tr>
+  <tr><td>Google Gemini</td><td>Sismolog AI</td><td>Earthquake parameters only; no personal data</td></tr>
+  <tr><td>Google Places / OpenStreetMap</td><td>Assembly point search</td><td>Approximate location during the search; not linked to an identity</td></tr>
+  <tr><td>RevenueCat</td><td>Subscription verification and analytics</td><td>Anonymous device ID and purchase data; no name, email or payment details</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Subscriptions</h2>
+<p>Sismik Premium is processed entirely through the Apple App Store. We have <strong>no access</strong> to your payment, billing or card details. Your subscription status is verified on-device via StoreKit and reported to our servers; it is also shared anonymously with RevenueCat for analytics. See the <a href="/terms/">Terms of Use</a> and <a href="/eula/">License Agreement</a>.</p>
+
+<h2>5. Security</h2>
+<ul>
+  <li>All network traffic is encrypted with TLS (HTTPS).</li>
+  <li>Data minimization: only what the service strictly requires is processed.</li>
+  <li>Direct client access to the database is disabled; every operation is checked server-side.</li>
+  <li>The API endpoint the app uses is published on a separate address from this marketing site.</li>
+</ul>
+
+<h2>6. Your rights (GDPR and Turkish KVKK)</h2>
+<p>You may access, correct, delete, or object to the processing of your data, and request data portability. Turning notifications off deletes your push registration; Emergency Health &amp; ID Cards can be deleted in the app at any time. Other requests can be sent to <a href="mailto:sismikapplication@gmail.com">sismikapplication@gmail.com</a> and are answered within 30 days.</p>
+
+<h2>7. Children</h2>
+<p>Sismik is intended for a general audience and does not knowingly collect data from children under 13. Since there is no account system, no age or identity information is ever requested.</p>
+
+<h2>8. Changes</h2>
+<p>Updates to this policy are published on this page with a revised effective date. Material changes are announced in the app.</p>
+</div>
+</div></main>
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-note">
+      <div data-lang="tr"><strong>Sismik bir erken uyarı sistemi değildir.</strong> Veriler kaynakların
+        yayımlama gecikmesine tabidir. Acil durumlarda 112'yi arayın ve resmî AFAD duyurularını esas alın.
+        <br><br>© 2026 Onur Kaya</div>
+      <div data-lang="en"><strong>Sismik is not an early-warning system.</strong> Data is subject to the
+        publication delay of each source. In an emergency, call your local emergency number and follow
+        official announcements.<br><br>© 2026 Onur Kaya</div>
+    </div>
+    <div class="footer-links"><a href="/"><span data-lang="tr">Ana sayfa</span><span data-lang="en">Home</span></a><a href="/privacy/"><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a><a href="/terms/"><span data-lang="tr">Kullanım Koşulları</span><span data-lang="en">Terms of Use</span></a><a href="/eula/"><span data-lang="tr">Lisans Sözleşmesi</span><span data-lang="en">License Agreement</span></a><a href="/data/"><span data-lang="tr">Veri Kaynakları</span><span data-lang="en">Data Sources</span></a><a href="/support/"><span data-lang="tr">Destek</span><span data-lang="en">Support</span></a><a href="mailto:sismikapplication@gmail.com"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></a></div>
+  </div>
+</footer>
+</body>
+</html>

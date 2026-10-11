@@ -1,0 +1,218 @@
+openapi: 3.1.0
+info:
+  title: Sismik Open Data API
+  version: "1.0.0"
+  summary: Free, read-only earthquake feeds merged from nine seismological agencies.
+  description: |
+    Static JSON / GeoJSON snapshots regenerated every ~10 minutes and served
+    from GitHub Pages. No API key, no rate limit on our side, CORS enabled.
+
+    Ücretsiz, salt okunur deprem akışları: dokuz sismoloji ajansının verisi
+    birleştirilir, ~10 dakikada bir yenilenir ve GitHub Pages üzerinden sunulur.
+    API anahtarı gerekmez, CORS açıktır.
+
+    Every record keeps its originating agency (`source`). Cite the agency and
+    Sismik. Not for life-safety decisions.
+  license:
+    name: MIT (code) — data per originating agency
+    url: https://github.com/kayaonur607/sismik/blob/main/LICENSE
+  contact:
+    name: Sismik
+    email: sismikapplication@gmail.com
+    url: https://github.com/kayaonur607/sismik
+servers:
+  - url: https://kayaonur607.github.io/sismik/v1
+paths:
+  /index.json:
+    get:
+      summary: Catalogue of endpoints, sources and snapshot metadata
+      operationId: getIndex
+      responses:
+        "200":
+          description: Endpoint catalogue
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Index" }
+  /earthquakes/latest.json:
+    get:
+      summary: All agency records from the last 24 hours (newest first)
+      operationId: getLatest
+      responses:
+        "200":
+          description: Earthquake list
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/EarthquakeList" }
+  /earthquakes/latest.geojson:
+    get:
+      summary: Same as latest.json as a GeoJSON FeatureCollection
+      operationId: getLatestGeoJSON
+      responses:
+        "200":
+          description: GeoJSON FeatureCollection (coordinates are [lon, lat, -depthKm])
+          content:
+            application/geo+json:
+              schema: { type: object }
+  /earthquakes/turkiye.json:
+    get:
+      summary: Last 24 hours inside Türkiye and surroundings (35.5–42.5°N, 25.5–45°E)
+      operationId: getTurkiye
+      responses:
+        "200":
+          description: Earthquake list
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/EarthquakeList" }
+  /earthquakes/significant.json:
+    get:
+      summary: M4.0+ worldwide over the last 7 days
+      operationId: getSignificant
+      responses:
+        "200":
+          description: Earthquake list
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/EarthquakeList" }
+  /earthquakes/significant.geojson:
+    get:
+      summary: Same as significant.json as GeoJSON
+      operationId: getSignificantGeoJSON
+      responses:
+        "200":
+          description: GeoJSON FeatureCollection
+          content:
+            application/geo+json:
+              schema: { type: object }
+  /earthquakes/sources/{source}.json:
+    get:
+      summary: Last 24 hours from a single agency
+      operationId: getBySource
+      parameters:
+        - name: source
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [afad, kandilli, emsc, usgs, noa, geonet, bmkg, jma, cenc]
+      responses:
+        "200":
+          description: Earthquake list
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/EarthquakeList" }
+  /stats/turkiye-24h.json:
+    get:
+      summary: 24-hour statistics for Türkiye
+      operationId: getStatsTurkiye
+      responses:
+        "200":
+          description: Statistics
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Stats" }
+  /stats/world-24h.json:
+    get:
+      summary: 24-hour worldwide statistics
+      operationId: getStatsWorld
+      responses:
+        "200":
+          description: Statistics
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Stats" }
+  /major-event.json:
+    get:
+      summary: Currently active major event (Türkiye M5.5+, world M7.0+), if any
+      operationId: getMajorEvent
+      responses:
+        "200":
+          description: Major event state
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MajorEvent" }
+components:
+  schemas:
+    Earthquake:
+      type: object
+      required: [id, source, magnitude, latitude, longitude, time]
+      properties:
+        id: { type: string, description: "Agency-scoped identifier, e.g. afad-123456, emsc-20261011_0000154" }
+        source: { type: string, enum: [AFAD, KANDILLI, EMSC, USGS, NOA, GEONET, BMKG, JMA, CENC] }
+        magnitude: { type: number, example: 4.3 }
+        magnitudeType: { type: [string, "null"], example: ML }
+        depthKm: { type: [number, "null"], example: 10.0 }
+        latitude: { type: number, example: 38.4192 }
+        longitude: { type: number, example: 27.1287 }
+        time: { type: string, format: date-time, description: Origin time (UTC) }
+        updatedAt: { type: [string, "null"], format: date-time }
+        place: { type: [string, "null"], description: Agency place name as published }
+        district: { type: [string, "null"] }
+        province: { type: [string, "null"] }
+        country: { type: [string, "null"] }
+        tsunami: { type: boolean }
+        status: { type: [string, "null"], description: "reviewed / automatic when the agency provides it" }
+        url: { type: [string, "null"], format: uri, description: Event page at the originating agency }
+    EarthquakeList:
+      type: object
+      required: [apiVersion, schemaVersion, generatedAt, count, earthquakes]
+      properties:
+        apiVersion: { type: string, example: v1 }
+        schemaVersion: { type: integer, example: 1 }
+        generatedAt: { type: string, format: date-time }
+        window: { type: object, description: "{ hours: 24 } or { days: 7 }" }
+        region: { type: object }
+        source: { type: string }
+        minMagnitude: { type: number }
+        count: { type: integer }
+        attribution: { type: string }
+        earthquakes:
+          type: array
+          items: { $ref: "#/components/schemas/Earthquake" }
+    Stats:
+      type: object
+      properties:
+        apiVersion: { type: string }
+        generatedAt: { type: string, format: date-time }
+        region: { type: string, enum: [turkiye, world] }
+        rangeHours: { type: integer }
+        total: { type: integer }
+        feltM3plus: { type: integer }
+        m45plus: { type: integer }
+        m60plus: { type: integer }
+        maxMagnitude: { type: number }
+        strongestPlace: { type: [string, "null"] }
+        strongestTime: { type: [string, "null"], format: date-time }
+        avgMagnitude: { type: number }
+        avgDepth: { type: number }
+        medianMagnitude: { type: number }
+        medianDepth: { type: number }
+        updatedAt: { type: [string, "null"], format: date-time }
+    MajorEvent:
+      type: object
+      properties:
+        apiVersion: { type: string }
+        generatedAt: { type: string, format: date-time }
+        active: { type: boolean }
+        event:
+          type: [object, "null"]
+          properties:
+            id: { type: string }
+            source: { type: string }
+            magnitude: { type: number }
+            depthKm: { type: number }
+            latitude: { type: number }
+            longitude: { type: number }
+            time: { type: string, format: date-time }
+            place: { type: string }
+            region: { type: string, enum: [turkiye, world] }
+            expiresAt: { type: string, format: date-time }
+    Index:
+      type: object
+      properties:
+        name: { type: string }
+        apiVersion: { type: string }
+        generatedAt: { type: string, format: date-time }
+        updateIntervalMinutes: { type: integer }
+        sources: { type: object }
+        counts: { type: object }
+        endpoints: { type: object }

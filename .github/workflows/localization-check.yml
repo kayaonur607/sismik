@@ -1,0 +1,14 @@
+name: Localization Check
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+jobs:
+  verify-catalogs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every string translated, placeholders consistent
+        run: python3 Scripts/strings.py check

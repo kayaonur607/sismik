@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sismik Open Data API</title>
+<meta name="description" content="Free, read-only earthquake feeds merged from nine seismological agencies. No API key, CORS enabled.">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #16181d; --muted: #5d6470; --line: #e6e8ec; --card: #f6f7f9;
+    --brand: #ff7a00; --brand-ink: #b34f00; --code: #f1f2f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1115; --fg: #eceef2; --muted: #9aa1ad; --line: #252a33; --card: #161a21;
+      --brand: #ff8a1f; --brand-ink: #ffb066; --code: #1b2029; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
+  h1 span { color: var(--brand); }
+  h2 { font-size: 20px; margin: 40px 0 12px; }
+  p.lead { color: var(--muted); font-size: 18px; margin: 12px 0 0; }
+  .lang button { border: 1px solid var(--line); background: var(--card); color: var(--fg);
+    padding: 6px 12px; border-radius: 999px; font: inherit; font-size: 14px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { border-color: var(--brand); color: var(--brand-ink); font-weight: 600; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+  .badge { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 14px; color: var(--muted); }
+  .badge b { color: var(--fg); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
+  code { background: var(--code); padding: 1px 6px; border-radius: 6px; word-break: break-all; }
+  pre { background: var(--code); padding: 14px 16px; border-radius: 12px; overflow-x: auto; margin: 0; }
+  a { color: var(--brand-ink); }
+  .note { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--brand);
+    border-radius: 12px; padding: 14px 16px; color: var(--muted); }
+  .table-wrap { overflow-x: auto; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  [data-lang] { display: none; }
+  html[lang="en"] [data-lang="en"], html[lang="tr"] [data-lang="tr"] { display: revert; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1><span>Sismik</span> Open Data API</h1>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="true">English</button>
+      <button type="button" data-set-lang="tr" aria-pressed="false">Türkçe</button>
+    </div>
+  </header>
+
+  <p class="lead" data-lang="en">Free, read-only earthquake feeds merged from nine seismological agencies — AFAD, Kandilli, EMSC, USGS, NOA, GeoNet, BMKG, JMA and CENC. No API key, no sign-up, CORS enabled.</p>
+  <p class="lead" data-lang="tr">Dokuz sismoloji ajansının (AFAD, Kandilli, EMSC, USGS, NOA, GeoNet, BMKG, JMA, CENC) verisini birleştiren ücretsiz, salt okunur deprem akışları. API anahtarı yok, kayıt yok, CORS açık.</p>
+
+  <div class="badges" aria-live="polite">
+    <span class="badge"><span data-lang="en">Updated</span><span data-lang="tr">Güncellendi</span>: <b id="updated">—</b></span>
+    <span class="badge"><span data-lang="en">Last 24 h</span><span data-lang="tr">Son 24 sa</span>: <b id="count-latest">—</b></span>
+    <span class="badge"><span data-lang="en">M4+ / 7 days</span><span data-lang="tr">M4+ / 7 gün</span>: <b id="count-significant">—</b></span>
+  </div>
+
+  <h2 data-lang="en">Endpoints</h2>
+  <h2 data-lang="tr">Uç noktalar</h2>
+  <p data-lang="en">Base URL: <code>https://kayaonur607.github.io/sismik/v1</code> · Snapshots are regenerated about every 10 minutes.</p>
+  <p data-lang="tr">Temel adres: <code>https://kayaonur607.github.io/sismik/v1</code> · Anlık görüntüler yaklaşık 10 dakikada bir yenilenir.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Path</th><th><span data-lang="en">Description</span><span data-lang="tr">Açıklama</span></th></tr></thead>
+    <tbody>
+      <tr><td><a href="v1/earthquakes/latest.json"><code>/earthquakes/latest.json</code></a></td>
+        <td><span data-lang="en">All agency records from the last 24 hours, newest first.</span><span data-lang="tr">Son 24 saatin tüm ajans kayıtları, en yeni önce.</span></td></tr>
+      <tr><td><a href="v1/earthquakes/latest.geojson"><code>/earthquakes/latest.geojson</code></a></td>
+        <td><span data-lang="en">The same feed as GeoJSON, ready for Leaflet, Mapbox or QGIS.</span><span data-lang="tr">Aynı akış GeoJSON olarak; Leaflet, Mapbox ve QGIS'e hazır.</span></td></tr>
+      <tr><td><a href="v1/earthquakes/turkiye.json"><code>/earthquakes/turkiye.json</code></a></td>
+        <td><span data-lang="en">Last 24 hours in Türkiye and surroundings (35.5–42.5°N, 25.5–45°E).</span><span data-lang="tr">Türkiye ve çevresinde son 24 saat (35,5–42,5°K, 25,5–45°D).</span></td></tr>
+      <tr><td><a href="v1/earthquakes/significant.json"><code>/earthquakes/significant.json</code></a></td>
+        <td><span data-lang="en">Worldwide M4.0+ over the last 7 days (also <code>.geojson</code>).</span><span data-lang="tr">Dünya genelinde son 7 günün M4.0+ depremleri (<code>.geojson</code> da var).</span></td></tr>
+      <tr><td><code>/earthquakes/sources/{source}.json</code></td>
+        <td><span data-lang="en">One agency only:</span><span data-lang="tr">Tek bir ajans:</span>
+          <a href="v1/earthquakes/sources/afad.json">afad</a>, <a href="v1/earthquakes/sources/kandilli.json">kandilli</a>,
+          <a href="v1/earthquakes/sources/emsc.json">emsc</a>, <a href="v1/earthquakes/sources/usgs.json">usgs</a>,
+          <a href="v1/earthquakes/sources/noa.json">noa</a>, <a href="v1/earthquakes/sources/geonet.json">geonet</a>,
+          <a href="v1/earthquakes/sources/bmkg.json">bmkg</a>, <a href="v1/earthquakes/sources/jma.json">jma</a>,
+          <a href="v1/earthquakes/sources/cenc.json">cenc</a></td></tr>
+      <tr><td><a href="v1/stats/turkiye-24h.json"><code>/stats/turkiye-24h.json</code></a></td>
+        <td><span data-lang="en">24-hour statistics for Türkiye.</span><span data-lang="tr">Türkiye için 24 saatlik istatistik.</span></td></tr>
+      <tr><td><a href="v1/stats/world-24h.json"><code>/stats/world-24h.json</code></a></td>
+        <td><span data-lang="en">24-hour worldwide statistics.</span><span data-lang="tr">Dünya geneli 24 saatlik istatistik.</span></td></tr>
+      <tr><td><a href="v1/major-event.json"><code>/major-event.json</code></a></td>
+        <td><span data-lang="en">The active major event (Türkiye M5.5+, world M7.0+), or <code>active: false</code>.</span><span data-lang="tr">Etkin büyük olay (Türkiye M5,5+, dünya M7,0+) ya da <code>active: false</code>.</span></td></tr>
+      <tr><td><a href="v1/index.json"><code>/index.json</code></a></td>
+        <td><span data-lang="en">Machine-readable catalogue of endpoints and sources.</span><span data-lang="tr">Uç nokta ve kaynakların makine okunur listesi.</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><a href="openapi.yaml">OpenAPI 3.1</a></p>
+
+  <h2 data-lang="en">Example</h2>
+  <h2 data-lang="tr">Örnek</h2>
+<pre><code>const res = await fetch('https://kayaonur607.github.io/sismik/v1/earthquakes/turkiye.json');
+const { generatedAt, earthquakes } = await res.json();
+for (const q of earthquakes.filter(q =&gt; q.magnitude &gt;= 3)) {
+  console.log(q.time, q.source, `M${q.magnitude}`, q.place, `${q.depthKm} km`);
+}</code></pre>
+
+  <h2 data-lang="en">Record format</h2>
+  <h2 data-lang="tr">Kayıt biçimi</h2>
+<pre><code>{
+  "id": "afad-731155",
+  "source": "AFAD",
+  "magnitude": 1.3,
+  "magnitudeType": "ML",
+  "depthKm": 7,
+  "latitude": 38.0745,
+  "longitude": 38.3723,
+  "time": "2026-10-11T09:20:15.000Z",
+  "updatedAt": null,
+  "place": "Çelikhan (Adıyaman)",
+  "district": "Çelikhan",
+  "province": "Adıyaman",
+  "country": "Türkiye",
+  "tsunami": false,
+  "status": null,
+  "url": "https://deprem.afad.gov.tr/apiv2/event/filter?eventid=731155"
+}</code></pre>
+  <p data-lang="en">The same physical earthquake can appear once per agency (for example AFAD and EMSC). Each record keeps its agency in <code>source</code>; we never alter agency values. Fields may be <code>null</code> when the agency does not publish them. New fields may be added within <code>v1</code>; existing fields will not change meaning.</p>
+  <p data-lang="tr">Aynı fiziksel deprem her ajans için ayrı bir kayıt olarak görünebilir (ör. AFAD ve EMSC). Her kayıt ajansını <code>source</code> alanında taşır; ajans değerleri değiştirilmez. Ajans yayımlamıyorsa alanlar <code>null</code> olabilir. <code>v1</code> içinde yeni alanlar eklenebilir; mevcut alanların anlamı değişmez.</p>
+
+  <h2 data-lang="en">Fair use</h2>
+  <h2 data-lang="tr">Adil kullanım</h2>
+  <div class="note" data-lang="en">Files are static and served from GitHub's CDN — polling every minute is fine; there is no benefit to polling faster than the 10-minute refresh. Please cite the originating agency and Sismik, and respect each agency's own terms. This feed is informational: do not use it for early warning or life-safety decisions; follow AFAD and your local authorities.</div>
+  <div class="note" data-lang="tr">Dosyalar statiktir ve GitHub'ın CDN'inden sunulur; dakikada bir sorgulamak sorun değildir, ancak 10 dakikalık yenilemeden sık sorgulamanın faydası yoktur. Lütfen kaynak ajansı ve Sismik'i belirtin, her ajansın kendi kullanım koşullarına uyun. Bu akış bilgilendirme amaçlıdır; erken uyarı ya da can güvenliği kararları için kullanmayın, AFAD'ı ve yerel yetkilileri takip edin.</div>
+
+  <footer>
+    <a href="https://github.com/kayaonur607/sismik">GitHub</a> ·
+    <a href="https://apps.apple.com/tr/app/sismik-deprem-takibi/id6787776158">App Store</a> ·
+    <a href="mailto:sismikapplication@gmail.com">sismikapplication@gmail.com</a>
+  </footer>
+</main>
+<script>
+  (function () {
+    var root = document.documentElement;
+    function setLang(lang) {
+      root.lang = lang;
+      document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.setLang === lang));
+      });
+      try { localStorage.setItem('sismik-api-lang', lang); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('sismik-api-lang'); } catch (e) {}
+    setLang(saved || ((navigator.language || '').toLowerCase().startsWith('tr') ? 'tr' : 'en'));
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.setLang); });
+    });
+    fetch('v1/index.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (i) {
+      document.getElementById('updated').textContent = new Date(i.generatedAt).toLocaleString(root.lang === 'tr' ? 'tr-TR' : 'en-GB');
+      document.getElementById('count-latest').textContent = i.counts.latest;
+      document.getElementById('count-significant').textContent = i.counts.significant7d;
+    }).catch(function () {});
+  })();
+</script>
+</body>
+</html>

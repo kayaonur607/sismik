@@ -1,0 +1,453 @@
+{
+  "sourceLanguage": "tr",
+  "strings": {
+    "CFBundleDisplayName": {
+      "comment": "Bundle display name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Sismik"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        }
+      }
+    },
+    "CFBundleName": {
+      "comment": "Bundle name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Sismik"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sismik"
+          }
+        }
+      }
+    },
+    "NSFaceIDUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يُستخدم Face ID لضمان وصولك أنت فقط إلى البيانات الصحية لعائلتك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID wird verwendet, damit nur Sie auf die Gesundheitsdaten Ihrer Familie zugreifen können."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το Face ID χρησιμοποιείται ώστε μόνο εσύ να ξεκλειδώνεις τις πληροφορίες υγείας της οικογένειάς σου."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID is used so that only you can unlock your family's health information."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID se utiliza para que solo tú puedas acceder a la información de salud de tu familia."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID est utilisé afin que vous seul puissiez accéder aux données de santé de votre famille."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID digunakan agar hanya kamu yang bisa membuka informasi kesehatan keluargamu."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID viene utilizzato affinché solo tu possa accedere ai dati sanitari della tua famiglia."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ご家族の健康情報をご本人のみが安全に確認できるようFace IDを使用します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "가족의 건강 정보를 본인만 열 수 있도록 Face ID를 사용합니다."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Face ID é usado para que só você possa desbloquear as informações de saúde da sua família."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID используется для того, чтобы только вы могли получить доступ к медицинским данным семьи."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ailenin sağlık bilgilerini yalnızca senin açabilmen için Face ID kullanılır."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用面容 ID，确保只有你能解锁家人的健康信息。"
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نستخدم موقعك لعرض الزلازل القريبة منك ومسافتها، وإرسال التنبيهات الخاصة بمكانك، والعثور على أقرب أماكن التجمع الآمنة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir nutzen deinen Standort, um Erdbeben in deiner Nähe und ihre Entfernung zu zeigen, Warnungen für deinen Ort zu senden und die nächsten Sammelplätze zu finden."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χρησιμοποιούμε την τοποθεσία σου για να δείχνουμε σεισμούς κοντά σου και την απόστασή τους, να στέλνουμε ειδοποιήσεις για το σημείο σου και να βρίσκουμε τους πλησιέστερους ασφαλείς χώρους."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We use your location to show earthquakes near you and how far away they are, send alerts for where you are, and find the nearest safety places."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usamos tu ubicación para mostrarte los sismos cercanos y su distancia, enviarte alertas para donde estás y encontrar los puntos seguros más cercanos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nous utilisons ta position pour afficher les séismes proches et leur distance, t'envoyer des alertes pour l'endroit où tu es et trouver les lieux sûrs les plus proches."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kami menggunakan lokasimu untuk menampilkan gempa di dekatmu beserta jaraknya, mengirim peringatan untuk lokasimu, dan menemukan titik aman terdekat."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usiamo la tua posizione per mostrarti i terremoti vicini e la loro distanza, inviarti avvisi per dove ti trovi e trovare le aree sicure più vicine."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "近くの地震とその距離の表示、現在地向けの地震通知、最寄りの避難場所の検索に位置情報を使用します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "주변 지진과 거리를 보여 주고, 현재 위치에 대한 지진 알림을 보내고, 가장 가까운 대피 장소를 찾기 위해 위치를 사용합니다."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usamos sua localização para mostrar terremotos perto de você e a distância deles, enviar alertas para onde você está e encontrar os pontos seguros mais próximos."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мы используем вашу геопозицию, чтобы показывать землетрясения рядом и расстояние до них, присылать уведомления для вашего места и находить ближайшие безопасные места."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yakınındaki depremleri ve uzaklıklarını göstermek, bulunduğun yer için deprem bildirimi göndermek ve en yakın toplanma alanlarını bulmak için konumunu kullanıyoruz."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我们使用你的位置来显示附近地震及其距离、针对你所在位置发送地震提醒，并查找最近的安全地点。"
+          }
+        }
+      }
+    },
+    "NSLocationAlwaysAndWhenInUseUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulunduğun yerdeki deprem ve tsunami bildirimlerini, uygulama kapalıyken de konumun değiştikçe güncel tutmak için kullanıyoruz. Konumun kabaca ve yalnızca belirgin bir yer değişikliğinde kullanılır."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keeps earthquake and tsunami alerts for your current location up to date as you move, even when the app is closed. Your location is used approximately and only after a significant change."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hält Erdbeben- und Tsunami-Warnungen für deinen aktuellen Standort aktuell, wenn du unterwegs bist – auch bei geschlossener App. Dein Standort wird nur ungefähr und nur bei einer deutlichen Ortsänderung verwendet."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantiene al día las alertas de terremotos y tsunamis de tu ubicación actual mientras te desplazas, incluso con la app cerrada. Tu ubicación se usa de forma aproximada y solo tras un cambio significativo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Garde à jour les alertes séisme et tsunami pour ta position actuelle quand tu te déplaces, même app fermée. Ta position est utilisée de façon approximative et seulement après un changement important."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantiene aggiornati gli avvisi di terremoto e tsunami per la tua posizione attuale mentre ti sposti, anche con l'app chiusa. La posizione viene usata in modo approssimativo e solo dopo uno spostamento significativo."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移動しても、アプリを閉じていても、現在地の地震・津波通知を最新に保ちます。位置情報はおおよその範囲で、大きく移動したときだけ使用します。"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поддерживает актуальность оповещений о землетрясениях и цунами для вашего местоположения при перемещении, даже когда приложение закрыто. Местоположение используется приблизительно и только при значительном перемещении."
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يُبقي تنبيهات الزلازل والتسونامي لموقعك الحالي محدَّثة أثناء تنقلك، حتى عند إغلاق التطبيق. يُستخدم موقعك بشكل تقريبي وفقط بعد تغيّر ملحوظ."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διατηρεί ενημερωμένες τις ειδοποιήσεις σεισμών και τσουνάμι για την τρέχουσα τοποθεσία σας καθώς μετακινείστε, ακόμη και με κλειστή εφαρμογή. Η τοποθεσία χρησιμοποιείται κατά προσέγγιση και μόνο μετά από σημαντική αλλαγή."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantém atualizados os alertas de terremoto e tsunami da sua localização atual enquanto você se desloca, mesmo com o app fechado. Sua localização é usada de forma aproximada e só após uma mudança significativa."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menjaga peringatan gempa dan tsunami untuk lokasi Anda saat ini tetap terbaru saat Anda berpindah, bahkan saat aplikasi ditutup. Lokasi digunakan secara perkiraan dan hanya setelah perpindahan yang signifikan."
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이동할 때 앱이 닫혀 있어도 현재 위치의 지진·쓰나미 알림을 최신 상태로 유지합니다. 위치는 대략적으로, 크게 이동했을 때만 사용됩니다."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在你移动时（即使应用已关闭）让当前位置的地震和海啸提醒保持最新。仅在位置发生明显变化时使用大致位置。"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

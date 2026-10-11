@@ -1,0 +1,39 @@
+# Sismik — public repository. Never commit credentials.
+# Sismik — herkese açık depo. Kimlik bilgileri asla commit edilmez.
+
+# --- Secrets / Gizli anahtarlar (templates live in Config/) ---
+Sismik/Services/AppKeys.swift
+Sismik/GoogleService-Info.plist
+*.p8
+*.p12
+*.pem
+*.mobileprovision
+*.env
+.env*
+service-account*.json
+*-firebase-adminsdk-*.json
+
+# --- Build output & dependencies ---
+Build/
+DerivedData/
+node_modules/
+functions/node_modules/
+functions/lib/
+api/dist/
+*.log
+firebase-debug.log
+firestore-debug.log
+
+# --- Tooling / OS ---
+.DS_Store
+**/.DS_Store
+.firebase/
+.wrangler/
+xcuserdata/
+*.xcuserstate
+# macOS folder icon artefact ("Icon\r")
+Icon?
+
+# Marketing material and planning notes are kept outside the repository
+AppStore/
+specs/

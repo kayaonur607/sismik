@@ -1,0 +1,8 @@
+/* Widget galerisi (sistem dilinde gösterilir).
+   Widget'ın içindeki metinler uygulamada seçili dili izler: WidgetStrings.swift. */
+"widget.gallery.recent.title" = "Son Depremler";
+"widget.gallery.recent.desc" = "Uygulamadaki listenin aynısı: listede seçtiğin kaynak ve büyüklük filtresi widget'a da uygulanır.";
+"widget.gallery.stats.title" = "Deprem Özeti";
+"widget.gallery.stats.desc" = "Listenin son 24 saati: deprem sayısı, en büyük deprem ve saatlik yoğunluk.";
+
+/* Artçı takibi Canlı Etkinliği */

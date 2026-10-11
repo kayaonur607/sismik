@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-title-tr="Veri Kaynakları — Sismik" data-title-en="Data Sources — Sismik">Veri Kaynakları — Sismik</title>
+<meta name="description" content="Sismik'teki deprem, fay hattı, sarsıntı şiddeti ve toplanma alanı verilerinin kaynakları ve sınırları.">
+<meta name="theme-color" content="#F4F5F8">
+<link rel="icon" href="/assets/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="/site.css">
+<script src="/lang.js" defer></script>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"><img src="/assets/icon.png" alt="" width="30" height="30"></span><b>Sismik</b></a>
+    <nav class="topnav" aria-label="Site">
+      <a href="/#features"><span data-lang="tr">Özellikler</span><span data-lang="en">Features</span></a><a href="/data/" class="nav-keep"><span data-lang="tr">Veri Kaynakları</span><span data-lang="en">Data sources</span></a><a href="/privacy/"><span data-lang="tr">Gizlilik</span><span data-lang="en">Privacy</span></a>
+      <span class="langswitch" role="group" aria-label="Dil / Language">
+        <button type="button" data-set="tr" aria-pressed="false">TR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </span>
+    </nav>
+  </div>
+</div>
+<main class="doc"><div class="wrap prose">
+<h1><span data-lang="tr">Veri Kaynakları</span><span data-lang="en">Data Sources</span></h1>
+<div data-lang="tr"><p class="issued">Son güncelleme: 24 Eylül 2026</p>
+<p>Sismik kendi sismik ölçümünü yapmaz. Uygulamadaki her sayı aşağıdaki kurumların yayımladığı veriden gelir. Bu sayfa hangi verinin nereden geldiğini, ne sıklıkla tazelendiğini ve hangi sınırlara tabi olduğunu anlatır.</p>
+
+<div class="note warn"><strong>Hepsi deprem gerçekleştikten sonra yayın yapar.</strong> Bir kayıt saniyeler içinde de gelebilir, otomatik çözüm gözden geçirilirken dakikalar da sürebilir. Sismik bir erken uyarı sistemi değildir.</div>
+
+<h2>1. Deprem katalogları</h2>
+<table>
+  <thead><tr><th>Kaynak</th><th>Kapsam</th><th>Notlar</th></tr></thead>
+  <tbody>
+  <tr><td><a href="https://deprem.afad.gov.tr/">AFAD</a><small>Afet ve Acil Durum Yönetimi Başkanlığı</small></td><td>Türkiye ve yakın çevresi</td><td>Türkiye için birincil kaynak. Büyüklükler ilk yayından sonra gözden geçirilebilir; Sismik revizyonu yakalayıp kaydı tazeler.</td></tr>
+  <tr><td><a href="https://www.emsc-csem.org/">EMSC-CSEM</a><small>Avrupa-Akdeniz Sismoloji Merkezi</small></td><td>Avrupa, Akdeniz ve dünya</td><td>Çok sayıda ulusal ağın kayıtlarını birleştirir. Aynı depremi farklı bir büyüklükle verebilir.</td></tr>
+  <tr><td><a href="https://earthquake.usgs.gov/">USGS</a><small>ABD Jeoloji Araştırmaları Kurumu</small></td><td>Dünya geneli</td><td>ShakeMap ürünlerinin de kaynağı (Bölüm 2).</td></tr>
+  <tr><td><a href="https://www.gein.noa.gr/">NOA</a><small>Atina Ulusal Gözlemevi</small></td><td>Yunanistan ve Ege</td><td>Ege Denizi depremlerinde en hızlı çözümü çoğu zaman bu kaynak yayımlar.</td></tr>
+  <tr><td><a href="http://www.koeri.boun.edu.tr/scripts/lst0.asp">Kandilli (KOERI)</a><small>Boğaziçi Üniversitesi Kandilli Rasathanesi ve Deprem Araştırma Enstitüsü</small></td><td>Türkiye ve çevresi</td><td>Türkiye için ikinci resmî kaynak; AFAD'a ulaşılamadığında da bildirim hızlı kalır. "İlksel" çözümler sonradan revize edilebilir.</td></tr>
+  <tr><td><a href="https://www.jma.go.jp/">JMA</a><small>Japonya Meteoroloji Ajansı</small></td><td>Japonya</td><td>Resmî deprem listesi; tsunami notu da okunur. Veri Wolfx açık API'si üzerinden alınır.</td></tr>
+  <tr><td><a href="https://news.ceic.ac.cn/">CENC</a><small>Çin Deprem Ağları Merkezi</small></td><td>Çin ve dünya</td><td>Resmî liste; veri Wolfx açık API'si üzerinden alınır.</td></tr>
+  <tr><td><a href="https://www.bmkg.go.id/">BMKG</a><small>Endonezya Meteoroloji, Klimatoloji ve Jeofizik Ajansı</small></td><td>Endonezya</td><td>Son deprem, M5+ ve hissedilen depremler; tsunami potansiyeli bilgisi dahil.</td></tr>
+  <tr><td><a href="https://www.geonet.org.nz/">GeoNet</a><small>Yeni Zelanda ulusal jeofizik ağı</small></td><td>Yeni Zelanda</td><td>Resmî deprem listesi.</td></tr>
+  </tbody>
+</table>
+<p>Kaynaklar aynı fiziksel depremi ayrı kayıtlar olarak yayımlayabilir. Sismik bunları zaman, konum ve büyüklük yakınlığına göre eşleştirip <strong>tek kayda indirir</strong> ve bölgenin resmî kurumunun kaydını öne alır; hangi kurumun yayımladığı her satırda rozetle gösterilir. Kaynaklar arasındaki büyüklük farkı normaldir — farklı ağlar, farklı istasyonlar ve farklı hesap yöntemleri kullanır.</p>
+
+<h2>2. Sarsıntı şiddeti</h2>
+<ul>
+  <li><span class="tag ok">ShakeMap</span> <strong>USGS ShakeMap</strong> — istasyon ölçümleriyle yer hareketi modelini birleştiren resmî eş-şiddet (MMI) ürünü. Yalnızca USGS'in ürettiği depremlerde bulunur.</li>
+  <li><span class="tag est">Tahmini ShakeMap</span> <strong>GMPE modeli</strong> — ShakeMap yoksa Sismik, Akkar-Bommer azalım modeliyle büyüklük, odak derinliği ve merkez üssü mesafesinden bir <em>tahmin</em> üretir. Ölçüm değildir.</li>
+</ul>
+<p>Uygulama bu ikisini hiçbir ekranda karıştırmaz: rozetin rengi ve metni hangi türde veriye baktığınızı açıkça söyler.</p>
+
+<h2>3. Tsunami uyarıları ve etki seviyesi</h2>
+<ul>
+  <li><strong>NOAA NTWC ve PTWC</strong> (<a href="https://www.tsunami.gov/">tsunami.gov</a>) — ABD Ulusal ve Pasifik Tsunami Uyarı Merkezlerinin uyarı, ikaz, izleme ve tehdit mesajları. Bilgi bültenleri bildirim üretmez.</li>
+  <li><strong>JMA</strong> ve <strong>BMKG</strong> — deprem kaydındaki tsunami uyarısı/potansiyeli.</li>
+  <li><strong><a href="https://www.gdacs.org/">GDACS</a></strong> — BM ve Avrupa Komisyonu'nun Küresel Afet Uyarı ve Koordinasyon Sistemi; nüfus ve hasar modeline dayalı yeşil/turuncu/kırmızı etki seviyesi.</li>
+</ul>
+<p>Akdeniz ve Ege için herkese açık makine okunur bir tsunami uyarı akışı bulunmadığından bu bölgede tsunami bildirimi gönderilmez; resmî duyuruları (AFAD, Kandilli) takip edin.</p>
+
+<h2>4. Fay hatları</h2>
+<p><a href="https://github.com/GEMScienceTools/gem-global-active-faults">GEM Global Active Faults</a> veritabanı (Global Earthquake Model Foundation). Küresel kapsamda aktif fay geometrileri; haritada kayma hızına göre renklendirilir. Bilimsel bir derlemedir — resmî imar veya zemin etüdü belgesi değildir.</p>
+
+<h2>5. Toplanma alanları</h2>
+<p>Yakınınızdaki açık alan ve toplanma noktası önerileri <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> katkıcı verisinden ve Google Places API'den derlenir. <strong>Bunlar resmî AFAD toplanma alanı listesi değildir.</strong> Gerçek bir afette yerel yönetimin ilan ettiği toplanma alanlarını esas alın.</p>
+
+<h2>6. Yapay zeka</h2>
+<p>Sismolog AI <a href="https://ai.google.dev/">Google Gemini</a> ile üretilir. Modele yalnızca depremin teknik parametreleri gönderilir; kişisel veri, konum veya cihaz bilgisi <strong>hiçbir zaman</strong> gönderilmez (bkz. <a href="/privacy/">Gizlilik Politikası</a>). Üretilen metin otomatiktir ve bilimsel görüş yerine geçmez.</p>
+
+<h2>7. Tazeleme ve gecikme</h2>
+<ul>
+  <li>Sunucu kaynakları <strong>15 saniyede bir</strong> yoklar; EMSC ve USGS kayıtları ayrıca anlık akıştan gelir. Yeni kayıt bulunduğunda bildirim hemen gönderilir.</li>
+  <li>Uygulama açıkken liste yaklaşık <strong>25 saniyede bir</strong> tazelenir.</li>
+  <li>Gerçek gecikme kaynağın yayın hızına bağlıdır ve Sismik'in denetiminde değildir.</li>
+  <li>Bağlantı yokken son indirilen veri gösterilir ve çevrimdışı olduğunuz ekranda açıkça belirtilir.</li>
+</ul>
+
+<h2>8. Kaynak hakları</h2>
+<p>Deprem verileri, fay geometrileri ve harita katmanları ilgili kurumlara aittir ve kendi kullanım koşullarına tabidir. Sismik bu verileri yeniden yayımlar; doğruluklarını garanti etmez. Bir kaynak hizmet vermeyi durdurursa ilgili özellikler kesintiye uğrayabilir.</p>
+</div>
+<div data-lang="en"><p class="issued">Last updated: 24 September 2026</p>
+<p>Sismik does not perform its own seismic measurements. Every number in the app comes from the institutions below. This page explains where each one comes from, how often it refreshes, and what its limits are.</p>
+
+<div class="note warn"><strong>All of them publish after an earthquake has happened.</strong> A record may arrive within seconds, or take minutes while an automatic solution is reviewed. Sismik is not an early-warning system.</div>
+
+<h2>1. Earthquake catalogues</h2>
+<table>
+  <thead><tr><th>Source</th><th>Coverage</th><th>Notes</th></tr></thead>
+  <tbody>
+  <tr><td><a href="https://deprem.afad.gov.tr/">AFAD</a><small>Disaster and Emergency Management Presidency, Türkiye</small></td><td>Turkey and surroundings</td><td>Primary source for Turkey. Magnitudes may be revised after first publication; Sismik picks up the revision and refreshes the record.</td></tr>
+  <tr><td><a href="https://www.emsc-csem.org/">EMSC-CSEM</a><small>Euro-Mediterranean Seismological Centre</small></td><td>Europe, the Mediterranean and worldwide</td><td>Aggregates many national networks. May report the same earthquake with a different magnitude.</td></tr>
+  <tr><td><a href="https://earthquake.usgs.gov/">USGS</a><small>United States Geological Survey</small></td><td>Worldwide</td><td>Also the source of ShakeMap products (Section 2).</td></tr>
+  <tr><td><a href="https://www.gein.noa.gr/">NOA</a><small>National Observatory of Athens</small></td><td>Greece and the Aegean</td><td>Often the fastest solution for Aegean earthquakes.</td></tr>
+  <tr><td><a href="http://www.koeri.boun.edu.tr/scripts/lst0.asp">Kandilli (KOERI)</a><small>Boğaziçi University Kandilli Observatory and Earthquake Research Institute</small></td><td>Türkiye and surroundings</td><td>Second official source for Türkiye; keeps alerts fast when AFAD is unreachable. Preliminary solutions may be revised.</td></tr>
+  <tr><td><a href="https://www.jma.go.jp/">JMA</a><small>Japan Meteorological Agency</small></td><td>Japan</td><td>Official earthquake list, including its tsunami note. Retrieved through the open Wolfx API.</td></tr>
+  <tr><td><a href="https://news.ceic.ac.cn/">CENC</a><small>China Earthquake Networks Center</small></td><td>China and worldwide</td><td>Official list, retrieved through the open Wolfx API.</td></tr>
+  <tr><td><a href="https://www.bmkg.go.id/">BMKG</a><small>Indonesian Agency for Meteorology, Climatology and Geophysics</small></td><td>Indonesia</td><td>Latest, M5+ and felt earthquakes, including tsunami potential.</td></tr>
+  <tr><td><a href="https://www.geonet.org.nz/">GeoNet</a><small>New Zealand's national geohazard network</small></td><td>New Zealand</td><td>Official earthquake list.</td></tr>
+  </tbody>
+</table>
+<p>Sources may publish the same physical earthquake as separate records. Sismik matches them by time, location and magnitude into <strong>a single entry</strong>, preferring the region's official agency, labelled with the publishing agency. Magnitude differences between sources are normal — different networks use different stations and calculation methods.</p>
+
+<h2>2. Shaking intensity</h2>
+<ul>
+  <li><span class="tag ok">ShakeMap</span> <strong>USGS ShakeMap</strong> — the official intensity (MMI) product combining station observations with ground-motion modelling. Available only for events USGS produces it for.</li>
+  <li><span class="tag est">Estimated ShakeMap</span> <strong>GMPE model</strong> — when no ShakeMap exists, Sismik derives an <em>estimate</em> from magnitude, focal depth and epicentral distance using the Akkar-Bommer attenuation model. It is not a measurement.</li>
+</ul>
+<p>The app never blurs the two: the badge's colour and wording say plainly which kind of data you are looking at.</p>
+
+<h2>3. Tsunami warnings and impact level</h2>
+<ul>
+  <li><strong>NOAA NTWC and PTWC</strong> (<a href="https://www.tsunami.gov/">tsunami.gov</a>) — warning, advisory, watch and threat messages from the US National and Pacific Tsunami Warning Centers. Information statements do not trigger notifications.</li>
+  <li><strong>JMA</strong> and <strong>BMKG</strong> — the tsunami warning/potential on the earthquake record.</li>
+  <li><strong><a href="https://www.gdacs.org/">GDACS</a></strong> — the Global Disaster Alert and Coordination System of the UN and the European Commission; a green/orange/red impact level based on population and damage models.</li>
+</ul>
+<p>There is no public machine-readable tsunami warning feed for the Mediterranean and the Aegean, so no tsunami notifications are sent there; follow official announcements (AFAD, Kandilli).</p>
+
+<h2>4. Fault lines</h2>
+<p>The <a href="https://github.com/GEMScienceTools/gem-global-active-faults">GEM Global Active Faults</a> database (Global Earthquake Model Foundation). Active fault geometries worldwide, coloured on the map by slip rate. It is a scientific compilation — not an official zoning or site-survey document.</p>
+
+<h2>5. Assembly areas</h2>
+<p>Nearby open space and assembly point suggestions are compiled from <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributor data and the Google Places API. <strong>These are not the official AFAD assembly-area list.</strong> In a real disaster, follow the assembly areas designated by your local authority.</p>
+
+<h2>6. Artificial intelligence</h2>
+<p>Sismolog AI is generated with <a href="https://ai.google.dev/">Google Gemini</a>. Only the earthquake's technical parameters are sent to the model; personal data, location and device information are <strong>never</strong> sent (see the <a href="/privacy/">Privacy Policy</a>). The generated text is automatic and does not replace scientific judgement.</p>
+
+<h2>7. Refresh and delay</h2>
+<ul>
+  <li>The server polls the sources <strong>every 15 seconds</strong>; EMSC and USGS records also arrive through live feeds. A new record is notified as soon as it is found.</li>
+  <li>While the app is open, the list refreshes roughly <strong>every 25 seconds</strong>.</li>
+  <li>Actual delay depends on how quickly each agency publishes and is outside Sismik's control.</li>
+  <li>Offline, the last downloaded data is shown and clearly marked as such.</li>
+</ul>
+
+<h2>8. Rights</h2>
+<p>Earthquake data, fault geometries and map layers belong to their respective institutions and are subject to their own terms. Sismik republishes them and makes no warranty as to their accuracy. If a source stops publishing, the related features may be interrupted.</p>
+</div>
+</div></main>
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-note">
+      <div data-lang="tr"><strong>Sismik bir erken uyarı sistemi değildir.</strong> Veriler kaynakların
+        yayımlama gecikmesine tabidir. Acil durumlarda 112'yi arayın ve resmî AFAD duyurularını esas alın.
+        <br><br>© 2026 Onur Kaya</div>
+      <div data-lang="en"><strong>Sismik is not an early-warning system.</strong> Data is subject to the
+        publication delay of each source. In an emergency, call your local emergency number and follow
+        official announcements.<br><br>© 2026 Onur Kaya</div>
+    </div>
+    <div class="footer-links"><a href="/"><span data-lang="tr">Ana sayfa</span><span data-lang="en">Home</span></a><a href="/privacy/"><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a><a href="/terms/"><span data-lang="tr">Kullanım Koşulları</span><span data-lang="en">Terms of Use</span></a><a href="/eula/"><span data-lang="tr">Lisans Sözleşmesi</span><span data-lang="en">License Agreement</span></a><a href="/data/"><span data-lang="tr">Veri Kaynakları</span><span data-lang="en">Data Sources</span></a><a href="/support/"><span data-lang="tr">Destek</span><span data-lang="en">Support</span></a><a href="mailto:sismikapplication@gmail.com"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></a></div>
+  </div>
+</footer>
+</body>
+</html>

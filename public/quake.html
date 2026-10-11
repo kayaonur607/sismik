@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sismik — Deprem Detayı</title>
+<meta name="apple-itunes-app" content="app-id=6787776158">
+<style>
+  :root { color-scheme: light dark; }
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", sans-serif;
+    background: #0b0b0f; color: #f2f2f5;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  @media (prefers-color-scheme: light) { body { background: #f4f4f7; color: #16161a; } }
+  .card {
+    width: 100%; max-width: 420px; border-radius: 22px; padding: 26px;
+    background: rgba(128,128,140,0.10);
+    border: 1px solid rgba(240,140,50,0.35);
+    text-align: center;
+  }
+  .logo { font-size: 15px; font-weight: 800; letter-spacing: 2px; color: #f08c32; margin-bottom: 18px; }
+  .mag {
+    display: inline-block; font-size: 44px; font-weight: 800;
+    color: #fff; background: linear-gradient(135deg,#e8842a,#c9432c);
+    border-radius: 18px; padding: 10px 22px; margin-bottom: 14px;
+  }
+  h1 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+  .meta { font-size: 14px; opacity: 0.72; line-height: 1.6; margin-bottom: 24px; }
+  a.store {
+    display: block; text-decoration: none; font-weight: 700; font-size: 16px;
+    color: #fff; background: #f08c32; padding: 15px 18px; border-radius: 14px;
+    margin-bottom: 10px;
+  }
+  .hint { font-size: 12px; opacity: 0.55; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">SİSMİK</div>
+    <div class="mag" id="mag">—</div>
+    <h1 id="title">Deprem Detayı</h1>
+    <p class="meta" id="meta"></p>
+    <a class="store" id="store" href="https://apps.apple.com/tr/app/id6787776158">App Store'dan Sismik'i İndir</a>
+    <p class="hint" id="hint">Sismik yüklüyse bu bağlantı doğrudan uygulamada açılır.</p>
+  </div>
+<script>
+(function () {
+  var p = new URLSearchParams(location.search);
+  var tr = (navigator.language || "tr").toLowerCase().indexOf("tr") === 0;
+
+  var mag = parseFloat(p.get("mag"));
+  if (isFinite(mag)) document.getElementById("mag").textContent = "M " + mag.toFixed(1);
+
+  var title = p.get("title");
+  if (title) {
+    document.getElementById("title").textContent = title;
+    document.title = "Sismik — M " + (isFinite(mag) ? mag.toFixed(1) : "?") + " " + title;
+  } else if (!tr) {
+    document.getElementById("title").textContent = "Earthquake Details";
+  }
+
+  var parts = [];
+  var depth = parseFloat(p.get("depth"));
+  if (isFinite(depth)) parts.push((tr ? "Derinlik " : "Depth ") + depth.toFixed(0) + " km");
+  var t = parseInt(p.get("t"), 10);
+  if (isFinite(t)) parts.push(new Date(t).toLocaleString(tr ? "tr-TR" : "en-US"));
+  var src = p.get("src");
+  if (src) parts.push(src);
+  document.getElementById("meta").textContent = parts.join(" · ");
+
+  if (!tr) {
+    document.getElementById("store").textContent = "Download Sismik on the App Store";
+    document.getElementById("store").href = "https://apps.apple.com/app/id6787776158";
+    document.getElementById("hint").textContent = "If Sismik is installed, this link opens directly in the app.";
+  }
+})();
+</script>
+</body>
+</html>

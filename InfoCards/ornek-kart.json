@@ -1,0 +1,46 @@
+{
+  "id": "2026-10-deprem-hazirlik-ayi",
+  "audience": "all",
+  "minVersion": "2.1.2",
+  "startAt": "2026-10-01T09:00:00+03:00",
+  "endAt": "2026-10-31T23:59:00+03:00",
+  "icon": "checkmark.shield.fill",
+  "tint": "green",
+  "title": {
+    "tr": "Deprem hazırlık ayı",
+    "en": "Earthquake preparedness month"
+  },
+  "subtitle": {
+    "tr": "Bu ay birkaç dakikanı ayırıp evini ve aileni hazırla.",
+    "en": "Take a few minutes this month to prepare your home and family."
+  },
+  "items": [
+    {
+      "icon": "shield.lefthalf.filled",
+      "title": { "tr": "Risk profilini incele", "en": "Check your risk profile" },
+      "body": {
+        "tr": "Bölgendeki faylar, deprem olasılığı ve geçmiş sarsıntılar tek ekranda.",
+        "en": "Nearby faults, quake probability and past shaking on one screen."
+      }
+    },
+    {
+      "icon": "bag.fill",
+      "title": { "tr": "Deprem çantanı kontrol et", "en": "Check your emergency bag" },
+      "body": {
+        "tr": "Su, ilaç ve pillerin son kullanma tarihlerine bak.",
+        "en": "Check expiry dates on water, medicine and batteries."
+      }
+    }
+  ],
+  "action": {
+    "label": { "tr": "Risk profilimi aç", "en": "Open my risk profile" },
+    "url": "sismik://risk"
+  },
+  "push": {
+    "title": { "tr": "🛡️ Deprem hazırlık ayı", "en": "🛡️ Earthquake preparedness month" },
+    "body": {
+      "tr": "Bölgenin risk profiline göz at, çantanı kontrol et.",
+      "en": "Look at your area's risk profile and check your bag."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "devices",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "environment",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "is_premium",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "product_updates_enabled",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "_public",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "_system",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "subscription_id",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "environment",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "is_premium",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "premium_expires_at",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "updated_at",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "product_updates_enabled",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "app_user_id",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "devices",
+      "fieldPath": "push_candidate",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "ai_cache",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "felt_reports",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "_system_push_claims",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "ai_cache",
+      "fieldPath": "expire_at",
+      "ttl": true,
+      "indexes": []
+    },
+    {
+      "collectionGroup": "felt_reports",
+      "fieldPath": "expire_at",
+      "ttl": true,
+      "indexes": []
+    },
+    {
+      "collectionGroup": "_system_push_claims",
+      "fieldPath": "expire_at",
+      "ttl": true,
+      "indexes": []
+    },
+    {
+      "collectionGroup": "safety_cells",
+      "fieldPath": "*",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "safety_cells",
+      "fieldPath": "expire_at",
+      "ttl": true,
+      "indexes": []
+    }
+  ]
+}

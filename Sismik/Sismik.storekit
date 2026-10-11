@@ -1,0 +1,149 @@
+{
+  "appPolicies": {
+    "eula": "",
+    "policies": [
+      {
+        "locale": "en_US",
+        "policyText": "",
+        "policyURL": ""
+      }
+    ]
+  },
+  "identifier": "8F2A1C4E-6B3D-4A9E-9C1F-2D5E7A8B0C3D",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "999.99",
+      "familyShareable": true,
+      "internalID": "7E1F0A21",
+      "localizations": [
+        {
+          "description": "Tek seferlik ödeme, tüm Premium özellikleri süresiz",
+          "displayName": "Ömür Boyu Premium",
+          "locale": "tr"
+        },
+        {
+          "description": "One-time payment, all Premium features forever",
+          "displayName": "Lifetime Premium",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.kayasoftware.sismik.lifetime",
+      "referenceName": "Premium Lifetime",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {
+    "_askToBuyEnabled": false,
+    "_billingGracePeriodEnabled": false,
+    "_billingIssuesEnabled": false,
+    "_disableDialogs": false,
+    "_failTransactionsEnabled": false,
+    "_locale": "tr",
+    "_renewalBillingIssuesEnabled": false,
+    "_storefront": "TUR",
+    "_storeKitErrors": [],
+    "_timeRate": 0
+  },
+  "subscriptionGroups": [
+    {
+      "id": "8A1B2C3D",
+      "localizations": [
+        {
+          "description": "Sismik'in gelişmiş özellikleri",
+          "displayName": "Sismik Premium",
+          "locale": "tr"
+        }
+      ],
+      "name": "Sismik Premium",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "billingPlans": [
+            {
+              "billingPlanType": "BILLED_UPFRONT",
+              "commitmentDisplayPrice": "39.99",
+              "displayPrice": "39.99",
+              "internalID": "FED02897",
+              "isEnabled": true
+            }
+          ],
+          "codeOffers": [],
+          "displayPrice": "39.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "1A2B3C4D",
+          "localizations": [
+            {
+              "description": "Yapay zeka, istatistik ve harita",
+              "displayName": "Aylık Premium",
+              "locale": "tr"
+            },
+            {
+              "description": "AI, statistics and map view",
+              "displayName": "Monthly Premium",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.kayasoftware.sismik.premium.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Premium Monthly",
+          "subscriptionGroupID": "8A1B2C3D",
+          "type": "RecurringSubscription",
+          "winbackOffers": [],
+          "introductoryOffer": {
+            "internalID": "7DA11F01",
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "introductoryOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "billingPlans": [
+            {
+              "billingPlanType": "BILLED_UPFRONT",
+              "commitmentDisplayPrice": "349.99",
+              "displayPrice": "349.99",
+              "internalID": "775F9AE9",
+              "isEnabled": true
+            }
+          ],
+          "codeOffers": [],
+          "displayPrice": "349.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "5E6F7A8B",
+          "localizations": [
+            {
+              "description": "Yapay zeka, istatistik ve harita",
+              "displayName": "Yıllık Premium",
+              "locale": "tr"
+            },
+            {
+              "description": "AI, statistics and map view",
+              "displayName": "Yearly Premium",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.kayasoftware.sismik.premium.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Premium Yearly",
+          "subscriptionGroupID": "8A1B2C3D",
+          "type": "RecurringSubscription",
+          "winbackOffers": [],
+          "introductoryOffer": {
+            "internalID": "7DA11F02",
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "introductoryOffers": []
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 5,
+    "minor": 0
+  }
+}

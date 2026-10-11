@@ -1,0 +1,55 @@
+name: Open Data API
+
+# Regenerates the static Sismik Open Data API (api/build.mjs) and publishes it
+# to GitHub Pages. Public traffic is served by GitHub's CDN and never reaches
+# the Sismik backend; each run makes five CDN-cached requests upstream.
+#
+# Statik Sismik Açık Veri API'sini (api/build.mjs) yeniden üretir ve GitHub
+# Pages'e yayımlar. Kullanıcı trafiği GitHub CDN'inden karşılanır, sunucuya
+# ulaşmaz; her çalışma sunucuya yalnızca beş önbellekli istek atar.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "api/**"
+      - ".github/workflows/open-data-api.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: open-data-api
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build snapshot
+        run: node api/build.mjs --out api/dist
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: api/dist
+          retention-days: 1
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["Z6ANLC75YG.com.kayasoftware.sismik"],
+        "components": [
+          { "/": "/quake/*" }
+        ]
+      }
+    ]
+  }
+}

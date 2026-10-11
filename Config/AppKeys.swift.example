@@ -1,0 +1,10 @@
+// Copy to Sismik/Services/AppKeys.swift and fill in your own keys.
+// Kopyalayıp Sismik/Services/AppKeys.swift olarak kaydedin ve kendi anahtarlarınızı girin.
+//
+//   cp Config/AppKeys.swift.example Sismik/Services/AppKeys.swift
+//
+// AppKeys.swift is git-ignored. / AppKeys.swift git tarafından yok sayılır.
+enum AppKeys {
+    /// RevenueCat public Apple SDK key (app.revenuecat.com › Project › API keys).
+    static let revenueCatAppleKey = "appl_YOUR_PUBLIC_SDK_KEY"
+}

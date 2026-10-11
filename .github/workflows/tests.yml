@@ -1,0 +1,64 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+jobs:
+  worker-and-guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Testler derlenmiş `functions/lib`i içe aktarır ve bu dizin depoda
+      # tutulmaz; derlemeden çalıştırmak modül bulunamadı hatası verir.
+      - name: Install functions dependencies
+        run: npm ci
+        working-directory: functions
+      - name: Build Cloud Functions
+        run: npm run build
+        working-directory: functions
+      - name: Worker and repo guard tests
+        run: node --test tests/*.test.mjs
+
+  fastisodate:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: FastISODate doğruluk ve hız doğrulaması
+        run: ./Scripts/verify-fastisodate.sh
+
+  map-contract:
+    # `/map` yanıtından alan düşürmek yayımlanmış istemcileri de sessizce
+    # bozabilir: harita havuzundaki nesne kullanıcı "Detay"a gittiğinde
+    # doğrudan EarthquakeDetailView'e geçer ve detay ekranı kaydı tazelemez.
+    # Bu iş, sunucunun gerçek /map gövdesini üretip uygulamanın gerçek
+    # Earthquake decoder'ıyla çözerek sözleşmeyi korur.
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install functions dependencies
+        run: npm ci
+        working-directory: functions
+      - name: /map sözleşmesi (gerçek sunucu gövdesi + gerçek iOS decoder)
+        run: ./Scripts/verify-map-contract.sh
+
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install functions dependencies
+        run: npm ci
+        working-directory: functions
+      - name: Build and test Cloud Functions
+        run: npm test
+        working-directory: functions

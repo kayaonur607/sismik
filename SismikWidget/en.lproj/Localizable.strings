@@ -1,0 +1,8 @@
+/* Widget gallery (shown in the system language).
+   Text inside the widget follows the app's selected language: WidgetStrings.swift. */
+"widget.gallery.recent.title" = "Recent Earthquakes";
+"widget.gallery.recent.desc" = "Mirrors the list in the app: the source and magnitude filters you pick there apply here too.";
+"widget.gallery.stats.title" = "Earthquake Summary";
+"widget.gallery.stats.desc" = "The list's last 24 hours: earthquake count, the largest one and hourly activity.";
+
+/* Aftershock tracking Live Activity */

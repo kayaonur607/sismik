@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Mobil istemciler doğrudan Firestore'a okuma/yazma yapamaz.
+    // Tüm akış Cloud Functions üzerinden yapılacaktır.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
